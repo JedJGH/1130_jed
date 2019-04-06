@@ -1,6 +1,11 @@
 import React, {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import MemoryUtils from '../../util/MemoryUtils'
+import {Col,Row} from 'antd'
+import LeftNav from '../../components/left-nav'
+import Footer from '../../components/footer'
+import Header from '../../components/header'
+import './admin.less'
 
 export default class Admin extends Component {
 
@@ -14,9 +19,16 @@ export default class Admin extends Component {
     }
 
     return (
-      <div>
-        Admin
-      </div>
+      <Row className='container'>
+        <Col span={4}>
+          <LeftNav/>
+        </Col>
+        <Col span={20} className='main'>
+            <Header/>
+            <div className='content'>界面主题区域</div>
+            <Footer/>
+        </Col>
+      </Row>
     )
   }
 }
